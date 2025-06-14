@@ -1,7 +1,7 @@
 import vue from 'rollup-plugin-vue'
+import postcss from 'rollup-plugin-postcss'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import resolve from "@rollup/plugin-node-resolve";
-import postcss from "rollup-plugin-postcss";
+import terser from '@rollup/plugin-terser'
 
 export default [
   {
@@ -17,13 +17,15 @@ export default [
       }
     ],
     plugins: [
-      resolve(),
-      postcss({
-        include: "**src/custom-cursor-style.css",
-        extract: resolve('dist/custom-cursor-style.css')
+      vue({
+        preprocessStyles: true,
+        template: {
+          isProduction: true
+        }
       }),
-      vue(), peerDepsExternal()
-    ],
-    external: [ 'vue' ]
+      postcss(),
+      peerDepsExternal(),
+      terser()
+    ]
   }
 ]

@@ -1,8 +1,6 @@
 import WhatsAppWidget from './WhatsAppWidget.vue'
 
-import './vue3-whatsapp-widget-style.css'
-
-export const WhatsAppWidget = {
+export const VueWhatsAppWidget = {
     install(Vue, options) {
         Vue.component("WhatsAppWidget", WhatsAppWidget);
     }
