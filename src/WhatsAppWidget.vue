@@ -34,7 +34,7 @@ import { ref } from 'vue'
 
 const props = defineProps(["phone", "text"])
 
-const user_text = ref(props?.text ? props.text : '')
+const user_text = ref(props.text)
 const show_window = ref(false)
 
 function toggle(){
