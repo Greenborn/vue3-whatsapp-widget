@@ -1,0 +1,33 @@
+{
+    "name": "@greenborn/vue3-whatsapp-widget",
+    "version": "0.1.0",
+    "description": "Componente Vue para widget de WhatsApp.",
+    "main": "dist/library.js",
+    "module": "dist/library.mjs",
+    "scripts": {
+        "build": "rollup -c"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Greenborn/vue3-whatsapp-widget"
+    },
+    "author": "Luciano Vega",
+    "license": "GPLv3",
+    "bugs": {
+        "url": "https://github.com/Greenborn/vue3-whatsapp-widget/issues"
+    },
+    "homepage": "https://github.com/Greenborn/vue3-whatsapp-widget#readme",
+    "devDependencies": {
+        "rollup": "^2.79.1",
+        "rollup-plugin-peer-deps-external": "^2.2.4",
+        "rollup-plugin-vue": "^6.0.0"
+    },
+    "files": [
+        "dist/*"
+    ],
+    "dependencies": {
+        "@rollup/plugin-node-resolve": "^15.3.0",
+        "rollup-plugin-postcss": "^4.0.2",
+        "vue": "^3.5.13"
+    }
+}
