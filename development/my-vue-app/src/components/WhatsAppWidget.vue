@@ -1,5 +1,4 @@
 <template>
-  whatsapp widget
   <div id="vwwb-widget-wrapper">
     <div id="vwwb-widget-window" v-if="show_window" style="display: flex;">
       <!--<div id="vwwb-quick-replies-row">
