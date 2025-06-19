@@ -29,16 +29,40 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const props = defineProps(["phone"])
 
 const user_text = ref("")
 const show_window = ref(false)
 
+
 function toggle(){
   show_window.value = !show_window.value
 }
+
+onMounted(() => {
+  document.addEventListener('click', (event) => {
+    const excludedElements = [
+        document.getElementById('vwwb-widget-window'),
+        document.getElementById('vwwb-main-row'),
+        document.getElementById('vwwb-default-text'),
+        document.getElementById('vwwb-send-button'),
+        document.getElementById('vwwb-widget-button'),
+    ]
+
+    let found = true
+    for (let i=0; i < excludedElements.length; i++){
+      if (excludedElements[i] !== null && excludedElements[i].contains(event.target)){
+        found = false
+        return
+      }
+    }
+    if (!found) return
+    
+    show_window.value = false
+  })
+})
 
 function send(){
   window.open("https://api.whatsapp.com/send/?phone="+props.phone+"&text="+encodeURI(user_text.value)+"&type=phone_number&app_absent=0", '_blank')
