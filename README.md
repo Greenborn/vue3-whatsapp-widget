@@ -1,4 +1,4 @@
-# Vue Custom Cursor
+# Vue3 WhatsApp Widget
 
 Este componente tiene como objetivo la posibilidad de incorporar el clásico widget de WhatsApp en su proyecto Vue
 
