@@ -1,11 +1,9 @@
 <template>
   <div id="vwwb-widget-wrapper">
     <div id="vwwb-widget-window" v-if="show_window" style="display: flex;">
-      <!--<div id="vwwb-quick-replies-row">
-        <button class="vwwb-reply-button">test 1</button>
-        <button class="vwwb-reply-button">test 2</button>
-        <button class="vwwb-reply-button">test 3</button>
-      </div>-->
+      <div id="vwwb-quick-replies-row" v-for="quick_reply in quick_replies">
+        <button class="vwwb-reply-button" @click="setQuickReply(quick_reply)">{{quick_reply.text}}</button>
+      </div>
       
       <div id="vwwb-main-row">
         <div id="vwwb-default-text">
@@ -31,14 +29,19 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-const props = defineProps(["phone"])
+const props = defineProps(["phone", "quick_replies"])
 
 const user_text = ref("")
 const show_window = ref(false)
-
+const phone = ref(props.phone)
 
 function toggle(){
   show_window.value = !show_window.value
+}
+
+function setQuickReply(quick_reply){
+  user_text.value = quick_reply.text
+  phone.value     = (quick_reply?.phone) ? quick_reply.phone : props.phone
 }
 
 onMounted(() => {
@@ -65,7 +68,7 @@ onMounted(() => {
 })
 
 function send(){
-  window.open("https://api.whatsapp.com/send/?phone="+props.phone+"&text="+encodeURI(user_text.value)+"&type=phone_number&app_absent=0", '_blank')
+  window.open("https://api.whatsapp.com/send/?phone="+phone.value+"&text="+encodeURI(user_text.value)+"&type=phone_number&app_absent=0", '_blank')
 }
 </script>
 

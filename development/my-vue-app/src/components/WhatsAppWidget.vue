@@ -41,7 +41,7 @@ function toggle(){
 
 function setQuickReply(quick_reply){
   user_text.value = quick_reply.text
-  phone.value     = quick_reply.phone
+  phone.value     = (quick_reply?.phone) ? quick_reply.phone : props.phone
 }
 
 onMounted(() => {

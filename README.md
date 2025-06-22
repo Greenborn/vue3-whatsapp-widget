@@ -22,7 +22,23 @@ createApp(App).use(VueWhatsAppWidget).mount('#app')
 En App.vue incluir:
 
 ```
+<template>
+    <CustomCursor phone="542494000001" :quick_replies="quick_replies" />
+</template>
 
-<CustomCursor phone="542494000001"/>
+<script setup>
+import { ref } from 'vue'
+
+const quick_replies = ref([
+  {
+    text: "Quick reply 1",
+    phone: "542494000000"
+  },
+  {
+    text: "Quick reply 2",
+    phone: "542494000001"
+  },
+])
+</script>
 
 ```

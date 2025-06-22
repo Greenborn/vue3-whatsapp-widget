@@ -1,6 +1,6 @@
 {
     "name": "@greenborn/vue3-whatsapp-widget",
-    "version": "0.1.7",
+    "version": "0.1.8",
     "description": "Componente Vue para widget de WhatsApp.",
     "main": "dist/library.js",
     "module": "dist/library.mjs",
