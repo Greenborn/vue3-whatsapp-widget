@@ -23,7 +23,7 @@ En App.vue incluir:
 
 ```
 <template>
-    <CustomCursor phone="542494000001" :quick_replies="quick_replies" />
+    <CustomCursor phone="542494000001" :quick_replies="quick_replies" button_size="3rem" />
 </template>
 
 <script setup>

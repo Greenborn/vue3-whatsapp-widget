@@ -1,12 +1,12 @@
 {
   "name": "@greenborn/vue3-whatsapp-widget",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Componente Vue para widget de WhatsApp.",
   "main": "dist/library.js",
   "module": "dist/library.mjs",
   "scripts": {
     "build": "rollup -c",
-    "publish": "npm publish --access public --tag latest"
+    "publish": "rm -rf dist && rollup -c && npm publish --access public --tag latest"
   },
   "repository": {
     "type": "git",
@@ -33,7 +33,6 @@
     "vue": "^3.5.13"
   },
   "keywords": [
-    "whatsapp",
     "whatsapp",
     "widget",
     "vue3"

@@ -15,7 +15,7 @@ const quick_replies = ref([
 </script>
 
 <template>
-  <WhatsAppWidget phone="542494000000" :quick_replies="quick_replies" />
+  <WhatsAppWidget phone="542494000000" :quick_replies="quick_replies" button_size="3rem" />
   <a href="https://github.com/Greenborn/vue3-whatsapp-widget"> GitHub</a>
   <button>Botón</button>
 </template>
